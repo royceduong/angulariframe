@@ -1,0 +1,21 @@
+<h1>Iframe Page</h1>
+<div id="results"></div>
+<p><button onclick="sendMessage()">Send Random Number to Parent</button></p>
+<script>
+    function bindEvent(element, eventName, eventHandler) {
+        if (element.addEventListener) {
+            element.addEventListener(eventName, eventHandler, false);
+        }
+    }
+
+    bindEvent(window, 'message', function (e) {
+        results.innerHTML = e.data;
+    });
+    //Send message to parent
+    function sendMessage(){
+      var msg = Math.random();
+      console.log('rrand number', msg)
+      window.parent.postMessage(msg, '*');
+    }
+
+</script>
