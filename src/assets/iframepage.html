@@ -14,7 +14,6 @@
     //Send message to parent
     function sendMessage(){
       var msg = Math.random();
-      console.log('rrand number', msg)
       window.parent.postMessage(msg, '*');
     }
 

@@ -8,12 +8,15 @@ import { EventManager } from '@angular/platform-browser';
 })
 export class AppComponent {
   title = 'sampleApp';
-  results : string = " ";
+  results: any;
 
   //Callback function to process data from window.
   recieveMessage = (event: MessageEvent) => {
-    if(event.data.data != undefined){
+    if( typeof event.data === "number"){
       this.results = event.data
+    }
+    else if(event.data.data == undefined){
+      this.results = undefined;
     }
   }
 
