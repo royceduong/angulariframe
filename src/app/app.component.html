@@ -1,6 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h4>Phenomenex.com</h4>
-<p><button (click)="myFunction()">Send Random Number to iframe</button></p>
-<p>{{results}}</p>
-<iframe id="iframeComponent" src="../assets/iframepage.html" width="1200" height="600" ></iframe>
+<p><button (click)="myFunction()">Send Random Number to Legacy</button></p>
+
+<p>From Child: {{results}}</p>
+
+<iframe id="iframeComponent" [src]="link | safe" width="1200" height="650"></iframe>
 <router-outlet></router-outlet>
+
